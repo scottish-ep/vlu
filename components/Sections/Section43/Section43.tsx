@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import Card from "components/Card/Card";
+import Icon from "components/Icon/Icon";
 import SectionLayout from "components/SectionLayout/SectionLayout";
 import { isArray } from "lodash";
 import Image from "next/image";
@@ -19,14 +20,20 @@ interface Section43Props {
     image?: string;
     category?: string;
     content?: string;
+    email?: string;
   }[];
+  cardLayout?: "horizontal";
 }
 
 const Section43 = (props: Section43Props) => {
-  const { id, title, list, background, variant = "blue" } = props;
+  const { id, title, list, background, variant = "blue", cardLayout } = props;
   const router = useRouter();
 
   const firstItem = isArray(list) ? list[0] : {};
+
+  const cardContaierClassName = classNames(styles.card_container, {
+    [styles.horizontal]: cardLayout === "horizontal",
+  });
 
   return (
     <div
@@ -65,7 +72,7 @@ const Section43 = (props: Section43Props) => {
         </div>
       </SectionLayout>
       <SectionLayout childrenClassName={styles.list}>
-        <div className={styles.card_container}>
+        <div className={cardContaierClassName}>
           {isArray(list) &&
             list.slice(1).map((item, index) => (
               <div className={styles.item} key={index}>
@@ -77,9 +84,17 @@ const Section43 = (props: Section43Props) => {
                     objectFit="cover"
                   />
                 </div>
-                <h3 className={styles.title}>{item.title}</h3>
-                <p className={styles.category}>{item.category}</p>
-                <p className={styles.content}>{item.content}</p>
+                <div className={styles.content}>
+                  <h3 className={styles.title}>{item.title}</h3>
+                  <p className={styles.category}>{item.category}</p>
+                  <p className={styles.content}>{item.content}</p>
+                  {item.email && (
+                    <div className={styles.row_emails}>
+                      <Icon icon="email-outline" size={16} color="#D72134" />
+                      <p className={styles.email}>{item.email}</p>
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
         </div>

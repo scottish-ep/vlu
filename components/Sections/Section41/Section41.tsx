@@ -11,6 +11,7 @@ import styles from "./Section41.module.scss";
 import Select from "components/Select/Select";
 
 interface Section41Props {
+  id?: string;
   title: string;
   content: string;
   image?: string;
@@ -31,6 +32,7 @@ interface Section41Props {
 }
 
 const Section41: React.FC<Section41Props> = ({
+  id,
   title,
   content,
   image,
@@ -54,6 +56,7 @@ const Section41: React.FC<Section41Props> = ({
 
   return (
     <SectionLayout
+      id={id}
       className={classNames(styles.section_41, {
         [styles.background]: background,
       })}

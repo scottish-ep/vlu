@@ -55,7 +55,7 @@ const AboutUsMissionVision: React.FC = (props) => {
           },
         ]}
       />
-      <Section66 {...defaultSection66} />
+      <Section66 className={styles.section66} {...defaultSection66} />
       <Section67 {...defaultSection67} />
       <Section68 {...defaultSection68} />
       <Section65 {...defaultSection65} />
@@ -72,6 +72,16 @@ const AboutUsMissionVision: React.FC = (props) => {
             content:
               "Undergrad is your guide to undergraduate academics and opportunities run by the Vice Provost for Undergraduate ",
             directUrl: "",
+          },
+          {
+            title: "Information Topic - 1",
+            content:
+              "Undergrad is your guide to undergraduate academics and opportunities run by the Vice Provost for Undergraduate ",
+          },
+          {
+            title: "Information Topic - 1",
+            content:
+              "Undergrad is your guide to undergraduate academics and opportunities run by the Vice Provost for Undergraduate ",
           },
           {
             title: "Information Topic - 1",

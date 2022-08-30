@@ -250,11 +250,7 @@ const Homepage = (props) => {
         title="Upcoming Admission Dates"
         directLabel="View Admission calander"
       />
-      <Section31
-        {...defaultSection31}
-        title="Additional 
-Information"
-      />
+      <Section31 {...defaultSection31} title="Additional Information" />
     </div>
   );
 };

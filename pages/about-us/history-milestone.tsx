@@ -1,13 +1,16 @@
 import Hero1 from "components/Hero1/Hero1";
+import Hero2 from "components/Hero2/Hero2";
 import SectionLayout from "components/SectionLayout/SectionLayout";
 import Section17 from "components/Sections/Section17/Section17";
 import Section26 from "components/Sections/Section26/Section26";
 import Section3 from "components/Sections/Section3/Section3";
 import Section4 from "components/Sections/Section4/Section4";
+import Section44 from "components/Sections/Section44/Section44";
 import Section6 from "components/Sections/Section6/Section6";
 import Section66 from "components/Sections/Section66/Section66";
 import {
   defaultHero1,
+  defaultHero2,
   defaultSection17,
   defaultSection3,
   defaultSection6,
@@ -22,6 +25,7 @@ const HistoryAndMilestone = () => {
     <div className="history-milestone">
       <Hero1 {...defaultHero1} title="History & Milestone" />
       <Section66 {...defaultSection66InnovationFuturistic} />
+      <Section44 {...defaultHero2} title="Key Milestones" />
       <Section26
         tabs={[
           { text: "2020 to Date", slug: `${pathname}/#to-date` },
@@ -59,7 +63,7 @@ const HistoryAndMilestone = () => {
           "https://picsum.photos/500/606",
         ]}
       />
-      <Section6 {...defaultSection6} />
+      <Section6 {...defaultSection6} background="green" />
       <Section17
         {...defaultSection17}
         directLabel=""

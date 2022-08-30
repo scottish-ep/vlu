@@ -75,6 +75,18 @@ export const defaultHero1FacultyGroup = {
   isShown: true,
   image: "/images/bg-hero-innovation-futuristic.png",
   title: "Faculty Group",
+}
+
+export const defaultHero1AcademicProfessorsLectures = {
+  isShown: true,
+  image: "/images/bg-hero-innovation-futuristic.png",
+  title: "Our Professors & Lecturers",
+};
+
+export const defaultAcademicSpecificFacility = {
+  isShown: true,
+  image: "/images/bg-hero-mission-vision.png",
+  title: "Individual Research Focus Area  Name",
   content:
     "A highly accomplished electrical engineer and computer scientist with expertise in the areas of wireless, cybersecurity, and mobility, Dutta has 35  years of experience in IT operations, research and development",
 };
@@ -697,11 +709,17 @@ export const defaultSection12 = {
 };
 
 export const defaultSection14 = {
-  content:
-    "”Here at vanglang, people are constantly in conversation with one another. During my time as the director of the program in Feminist, Gender, and Sexuality Studies, I saw how faculty and students in different disciplines were incredibly engaged with their material and with one another. People are very intellectually generous here.”",
   title: "Darlene Robertson,",
   subTitle: "President",
-  avatar: require("public/images/section_14_avt.png"),
+  list: [
+    {
+      name: "Darlene Robertson",
+      position: "President",
+      content:
+        "”Here at vanglang, people are constantly in conversation with one another. During my time as the director of the program in Feminist, Gender, and Sexuality Studies, I saw how faculty and students in different disciplines were incredibly engaged with their material and with one another. People are very intellectually generous here.”",
+      image: require("public/images/section_14_avt.png"),
+    },
+  ],
 };
 
 export const defaultSection15 = {
@@ -1002,6 +1020,13 @@ export const defaultSection24 = {
   directLabel: "Explore Oppurtunities",
 };
 
+export const defaultSection24AcademicsProfessorsLecture = {
+  title: "Community Engagement and Sustainability",
+  content:
+    "A highly accomplished electrical engineer and computer scientist with expertise in the areas of wireless, cybersecurity, and Community Engagement and Sustainability Community Engagement and Sustainability electrical engineer and computer scientist",
+  directLabel: "Explore Oppurtunities",
+};
+
 export const defaultSection27 = {
   title: "Our Research Objectives",
   content:
@@ -1074,6 +1099,56 @@ export const defaultSection29 = {
   content:
     "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
   directLabel: "Explore Council of Researchers",
+  directUrl: "",
+  list: [
+    {
+      title: "Courtney Henry 1",
+      content: "Proffessor, Mathematics",
+      image: require("public/images/section_18_avatar1.png"),
+    },
+    {
+      title: "Courtney Henry 2",
+      content: "Proffessor, Mathematics",
+      image: require("public/images/section_18_avatar2.png"),
+    },
+    {
+      title: "Courtney Henry 3",
+      content: "Proffessor, Mathematics",
+      image: require("public/images/section_18_avatar3.png"),
+    },
+    {
+      title: "Courtney Henry 4",
+      content: "Proffessor, Mathematics",
+      image: require("public/images/section_18_avatar3.png"),
+    },
+    {
+      title: "Courtney Henry 5",
+      content: "Proffessor, Mathematics",
+      image: require("public/images/section_18_avatar2.png"),
+    },
+    {
+      title: "Courtney Henry 6",
+      content: "Proffessor, Mathematics",
+      image: require("public/images/section_18_avatar1.png"),
+    },
+    {
+      title: "Courtney Henry 7",
+      content: "Proffessor, Mathematics",
+      image: require("public/images/section_18_avatar2.png"),
+    },
+    {
+      title: "Courtney Henry 8",
+      content: "Proffessor, Mathematics",
+      image: require("public/images/section_18_avatar1.png"),
+    },
+  ],
+};
+
+export const defaultSection29AcademicsSpecificFacility = {
+  title: "Researchers of Faculty",
+  content:
+    "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
+  directLabel: "Explore all Lecturers & Professors",
   directUrl: "",
   list: [
     {
@@ -1439,6 +1514,46 @@ export const defaultSection37 = {
   ],
 };
 
+export const defaultSection37AcademicsSpecificFacility = {
+  title: "Science journals ",
+  directLabel: "View all Magazines",
+  directUrl: "",
+  list: [
+    {
+      category: "Science",
+      title: "How to design a product that can grow itself 10x in year",
+      subTitle: "By Abdhur Rahman",
+      content:
+        "On November 18, 2021, Van Lang students participated in a community activity to paint and",
+      image: "https://picsum.photos/1400/1000",
+    },
+    {
+      category: "Science",
+      title: "How to design a product that can grow itself 10x in year",
+      subTitle: "By Abdhur Rahman",
+      content:
+        "On November 18, 2021, Van Lang students participated in a community activity to paint and",
+      image: "https://picsum.photos/1400/1000",
+    },
+    {
+      category: "Science",
+      title: "How to design a product that can grow itself 10x in year",
+      subTitle: "By Abdhur Rahman",
+      content:
+        "On November 18, 2021, Van Lang students participated in a community activity to paint and",
+      image: "https://picsum.photos/1400/1000",
+    },
+    {
+      category: "Science",
+      title: "How to design a product that can grow itself 10x in year",
+      subTitle: "By Abdhur Rahman",
+      content:
+        "On November 18, 2021, Van Lang students participated in a community activity to paint and",
+      image: "https://picsum.photos/1400/1000",
+    },
+  ],
+};
+
 export const defaultSection38 = {
   title: "Transparency Report",
   content:
@@ -1662,6 +1777,29 @@ export const defaultMagazines = {
   downloadUrl: "#",
 };
 
+export const defaultLeaturerProfile = {
+  image: require("public/images/lecturer-profiles-1.png"),
+  name: "Prof Dr Ming shik ko",
+  typo: "Professor of Greek",
+  subjectArea: "Theory of Something.",
+  quaLification: "MA Edin DPhil Oxf",
+  contacts: [
+    {
+      label: "email",
+      value: "v.dtqt@vanlanguni.edu.vn",
+    },
+    {
+      label: "phone",
+      value: "0931 645 130",
+    },
+  ],
+  academicBackground:
+    "I grew up in Bowhill, a former coal-mining village in Fife, Scotland. Thanks to the dedication and support of my teachers at Denend Primary School and Glenrothes High School, I became the first person in my family to attend University. I studied Classics and Gaelic at Edinburgh University and taught at Harvard University before coming to University College. I have been a Research Fellow of the Alexander von Humboldt-Stiftung, the British Academy, and the Leverhulme Trust, and have also taught as a visiting Professor at Universities in Germany and New Zealand. ",
+  teaching:
+    "I grew up in Bowhill, a former coal-mining village in Fife, Scotland. Thanks to the dedication and support of my teachers at Denend Primary School and Glenrothes High School, I became the first person in my family to attend University. I studied Classics and Gaelic at Edinburgh University and taught at Harvard University before coming to University College. I have been a Research Fellow of the Alexander von Humboldt-Stiftung, the British Academy, and the Leverhulme Trust, and have also taught as a visiting Professor at Universities in Germany and New Zealand. ",
+  publications: "Publications",
+};
+
 export const defaultSection42 = {
   title: "Academics",
   subTitle: "Awards Gallery",
@@ -1731,6 +1869,7 @@ export const defaultSection43 = {
       category: "Chairman",
       content:
         "Remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. /n/ Remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      email: "tosajadkaja@vl.vie.com",
     },
     {
       title: "Courtney Henry",
@@ -1796,14 +1935,12 @@ export const defaultSection51 = {
     {
       title: "Vision",
       image: require("public/images/section_51_image1.png"),
-      directLabel: "Read more",
       content:
         "A highly accomplished electrical engineer and computer scientist with expertise in the areas of wireless, cybersecurity, and Community Engagement and Sustainability Community Engagement and Sustainability electrical engineer and computer scientist",
     },
     {
       title: "Mission",
       image: require("public/images/section_51_image2.png"),
-      directLabel: "Read more",
       content:
         "A highly accomplished electrical engineer and computer scientist with expertise in the areas of wireless, cybersecurity, and Community Engagement and Sustainability Community Engagement and Sustainability electrical engineer and computer scientist",
     },
@@ -2174,7 +2311,6 @@ export const defaultSection72 = [
     image: "https://picsum.photos/1000/500",
   },
 ];
-
 
 export const defaultSection76 = {
   title: "Transparency Report",
@@ -2622,3 +2758,104 @@ export const defaultSection76 = {
     }
   ],
 };
+
+export const defaultSection75 = {
+  title: "Academics",
+  list: [
+    {
+      title: "Dr. Nguyen Cao Tri",
+      image: "https://picsum.photos/500/250",
+      category: "Chairman",
+      content:
+        "Remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. /n/ Remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      email: "tosajadkaja@vl.vie.com",
+    },
+    {
+      title: "Courtney Henry",
+      image: "https://picsum.photos/500/251",
+      category: "Assoc.Prof.  , Member - President",
+      content:
+        "We equip our students with academic skills, creative mindsets, entrepreneurship as",
+      email: "tosajadkaja@vl.vie.com",
+    },
+    {
+      title: "Courtney Henry",
+      image: "https://picsum.photos/500/252",
+      category: "Assoc.Prof.  , Member - President",
+      content:
+        "We equip our students with academic skills, creative mindsets, entrepreneurship as",
+      email: "tosajadkaja@vl.vie.com",
+    },
+    {
+      title: "Courtney Henry",
+      image: "https://picsum.photos/500/253",
+      category: "Assoc.Prof.  , Member - President",
+      content:
+        "We equip our students with academic skills, creative mindsets, entrepreneurship as",
+      email: "tosajadkaja@vl.vie.com",
+    },
+    {
+      title: "Courtney Henry",
+      image: "https://picsum.photos/500/254",
+      category: "Assoc.Prof.  , Member - President",
+      content:
+        "We equip our students with academic skills, creative mindsets, entrepreneurship as",
+      email: "tosajadkaja@vl.vie.com",
+    },
+    {
+      title: "Courtney Henry",
+      image: "https://picsum.photos/500/255",
+      category: "Assoc.Prof.  , Member - President",
+      content:
+        "We equip our students with academic skills, creative mindsets, entrepreneurship as",
+      email: "tosajadkaja@vl.vie.com",
+    },
+    {
+      title: "Courtney Henry",
+      image: "https://picsum.photos/500/256",
+      category: "Assoc.Prof.  , Member - President",
+      content:
+        "We equip our students with academic skills, creative mindsets, entrepreneurship as",
+      email: "tosajadkaja@vl.vie.com",
+    },
+    {
+      title: "Courtney Henry",
+      image: "https://picsum.photos/500/257",
+      category: "Assoc.Prof.  , Member - President",
+      content:
+        "We equip our students with academic skills, creative mindsets, entrepreneurship as",
+      email: "tosajadkaja@vl.vie.com",
+    },
+    {
+      title: "Courtney Henry",
+      image: "https://picsum.photos/500/258",
+      category: "Assoc.Prof.  , Member - President",
+      content:
+        "We equip our students with academic skills, creative mindsets, entrepreneurship as",
+      email: "tosajadkaja@vl.vie.com",
+    },
+  ],
+};
+
+export const defaultSection26 = [
+  {
+    slug: "tab-1",
+    text: "Overview",
+  },
+  {
+    slug: "tab-2",
+    text: "Objectives",
+  },
+  {
+    slug: "tab-3",
+    text: "Research Focus Area",
+  },
+  {
+    slug: "tab-4",
+    text: "Project & Publications",
+  },
+  {
+    slug: "tab-5",
+    text: "News & Events",
+  },
+];

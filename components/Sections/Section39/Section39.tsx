@@ -17,6 +17,7 @@ interface Section39Props {
   isShown?: boolean;
   directLabel?: string;
   directUrl?: string;
+  id?: string;
 }
 
 const Section39: React.FC<Section39Props> = ({
@@ -26,6 +27,7 @@ const Section39: React.FC<Section39Props> = ({
   isShown = true,
   directLabel,
   directUrl,
+  id,
 }) => {
   const sliderProps = {
     slidesToShow: 1,
@@ -39,6 +41,7 @@ const Section39: React.FC<Section39Props> = ({
 
   return (
     <SectionLayout
+      id={id}
       className={styles.section_39}
       childrenClassName={styles.section_39_container}
     >

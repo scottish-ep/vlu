@@ -38,7 +38,7 @@ const Section76: React.FC<Section76Props> = ({
   const sliderProps = {
     slidesToShow: 1,
     slidesToScroll: 1,
-    rows: 3,
+    rows: 5,
   };
 
   if (!isShown) {
@@ -75,10 +75,10 @@ const Section76: React.FC<Section76Props> = ({
         </div>
         <div data-aos="fade-left" className={styles.right}>
           <Carousel animation="fade-right" carouselProps={sliderProps}>
-            <div className={styles.selected_items}>
-              {isArray(selectedItem.list) &&
-                selectedItem.list.map((item, index) => (
-                  <div key={index} className={styles.item}>
+            {isArray(selectedItem.list) &&
+              selectedItem.list.map((item, index) => (
+                <div className={styles.selected_items} key={index}>
+                  <div className={styles.item}>
                     <p className={styles.item_title}>{item.title}</p>
                     <Image
                       className={styles.item_image}
@@ -87,8 +87,17 @@ const Section76: React.FC<Section76Props> = ({
                       layout="fill"
                     />
                   </div>
-                ))}
-            </div>
+                  <div className={styles.item}>
+                    <p className={styles.item_title}>{item.title}</p>
+                    <Image
+                      className={styles.item_image}
+                      src={item.image || defaultAvatar}
+                      alt=""
+                      layout="fill"
+                    />
+                  </div>
+                </div>
+              ))}
           </Carousel>
         </div>
       </div>

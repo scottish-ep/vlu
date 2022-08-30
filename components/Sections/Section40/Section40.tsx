@@ -14,6 +14,7 @@ import Select from "components/Select/Select";
 type IList = { title?: string; content?: string };
 
 interface Section40Props {
+  id?: string;
   title: string;
   content: string;
   image?: string;
@@ -26,6 +27,7 @@ interface Section40Props {
 }
 
 const Section40: React.FC<Section40Props> = ({
+  id,
   title,
   content,
   image,
@@ -61,6 +63,7 @@ const Section40: React.FC<Section40Props> = ({
 
   return (
     <SectionLayout
+      id={id}
       className={classNames(styles.section_40, {
         [styles.background]: background,
       })}

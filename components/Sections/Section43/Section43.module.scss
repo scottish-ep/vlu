@@ -141,7 +141,69 @@
           font-weight: $font-normal;
         }
       }
+
     }
+
+    .horizontal {
+      padding-block-end: 10px;
+      align-items: flex-start;
+      .item {
+        width: 49%;
+        display: flex;
+        align-content: flex-start;
+        justify-content: space-between;
+
+        .image {
+          border-radius: 12px;
+          overflow: hidden;
+          // min-width: 277px;
+          width: 74%;
+          padding-top: unset;
+          height: 313px;
+          margin-right: 40px;
+          position: relative;
+          & > span {
+            transition: all 0.25s linear;
+          }
+
+          &:hover {
+            & > span {
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        .title {
+          margin-top: 20px;
+          color: $dark-50;
+          font-size: $text-lg;
+          font-weight: $font-bold;
+          line-height: $line-height;
+          letter-spacing: -0.006em;
+        }
+
+        .category {
+          margin: 5px 0;
+          color: $primary-500;
+          font-size: $text-base;
+          line-height: $line-height;
+          font-weight: $font-normal;
+        }
+
+        .row_emails {
+          margin-top: 15px;
+          display: flex;
+          align-items: center;
+          .email {
+            font-size: $text-md;
+            color: $dark-0;
+            font-weight: $font-semi-bold;
+            margin-left: 16px;
+          }
+        }
+      }
+    }
+
   }
 
   @media screen and (max-width: $big-tablet) {
@@ -165,6 +227,33 @@
         }
         .first_item {
           width: 65%;
+        }
+      }
+    }
+
+    .list {
+      .card_container {  
+        &.horizontal {
+          .item {
+            .image {
+              height: 180px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    .list {
+      .card_container {  
+        &.horizontal {
+          .item {
+            .image {
+              width: 37%;
+              height: 270px;
+            }
+          }
         }
       }
     }
@@ -207,6 +296,29 @@
         gap: 10px;
         .item {
           width: 40vw !important;
+        }
+
+        &.horizontal {
+          padding-bottom: 20px;
+          flex-wrap: nowrap;
+          overflow: auto;
+          gap: 10px;
+          .item {
+            flex-direction: column;
+            width: 47vw !important;
+            .image {
+              width: 100%;
+            }
+  
+            .row_emails {
+              margin-top: 10px;
+              .email {
+                font-size: $text-base;
+                margin-left: 5px;
+                word-wrap: break-word;
+              }
+            }
+          }
         }
       }
     }

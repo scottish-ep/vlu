@@ -20,62 +20,73 @@
 
   &_container {
     position: unset !important;
-    display: flex;
     overflow: hidden;
     // gap: 0 16.5%;
-    gap: 0 146px;
     padding: 60px 0;
-
-    .left {
-      display: flex;
-      width: 45.5%;
-      // max-width: 660px;
-      gap: 0 34px;
-      margin-top: 16px;
-
-      &_content {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        gap: 36px 0;
-
-        &_name {
-          font-size: $text-lg;
-          font-weight: $font-bold;
-          color: $greyscale-10;
-        }
-
-        &_role {
-          font-size: 17px;
-          margin-top: 4px;
-          line-height: $line-height;
-          color: $greyscale-25;
-          font-family: $dm-font;
-        }
-
-        &_content {
-          font-size: $text-xl;
-          font-weight: $font-medium;
-          line-height: $line-height;
-          color: $dark-50;
-        }
+    z-index: 1;
+    .header {
+      margin-bottom: 40px;
+      .title {
+        font-size: $text-5xl;
+        font-weight: $font-bold;
+        max-width: 900px;
       }
     }
 
-    .right {
-      min-width: 385px;
-      border-radius: 8px;
-      overflow: hidden;
-      // height: 481px;
+    .item {
+      display: flex !important;
+      gap: 0 146px;
+      .left {
+        display: flex;
+        width: 45.5%;
+        // max-width: 660px;
+        gap: 0 34px;
+        margin-top: 16px;
 
-      & > span {
-        transition: all 0.25s linear;
+        &_content {
+          margin-top: 20px;
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+          gap: 36px 0;
+
+          &_name {
+            font-size: $text-lg;
+            font-weight: $font-bold;
+            color: $greyscale-10;
+          }
+
+          &_role {
+            font-size: 17px;
+            margin-top: 4px;
+            line-height: $line-height;
+            color: $greyscale-25;
+            font-family: $dm-font;
+          }
+
+          &_content {
+            font-size: $text-xl;
+            font-weight: $font-medium;
+            line-height: $line-height;
+            color: $dark-50;
+          }
+        }
       }
 
-      &:hover {
+      .right {
+        min-width: 385px;
+        border-radius: 8px;
+        overflow: hidden;
+        // height: 481px;
+
         & > span {
-          transform: scale(1.1);
+          transition: all 0.25s linear;
+        }
+
+        &:hover {
+          & > span {
+            transform: scale(1.1);
+          }
         }
       }
     }
@@ -85,6 +96,7 @@
     &:after {
       display: none;
     }
+
     .section_14_container {
       .right {
         position: relative;
@@ -102,6 +114,24 @@
     }
   }
 
+  &.background {
+    background-color: $background;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-image: url("../../../public/images/section_14-pattern.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 407px;
+      width: 400px;
+    }
+  }
+
   @media screen and (max-width: $big-tablet) {
     &:after {
       top: 0;
@@ -111,23 +141,27 @@
     }
 
     &_container {
-      flex-direction: column-reverse;
-      align-items: center;
-      gap: 42px 0;
-      padding: 50px 0;
-
-      .left {
-        width: 100%;
-        gap: 20px 0;
-        flex-direction: column;
-
-        &_content {
-          &_name {
-            font-size: $text-md;
-          }
+      .header {
+        margin-bottom: 0;
+      }
+      .item {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 42px 0;
+        padding: 50px 0;
+        .left {
+          width: 100%;
+          gap: 20px 0;
+          flex-direction: column;
 
           &_content {
-            font-size: $text-lg;
+            &_name {
+              font-size: $text-md;
+            }
+
+            &_content {
+              font-size: $text-lg;
+            }
           }
         }
       }
@@ -135,27 +169,36 @@
   }
 
   @media screen and (max-width: $mobile) {
+    &:before {
+      display: none !important;
+    }
+
+    &:after {
+      display: none;
+    }
+
     &_container {
       padding-top: 100px;
-
-      .left {
-        &_content {
-          gap: 20px 0;
-
-          &_name {
-            font-size: $text-base;
-          }
-
+      .item {
+        .left {
           &_content {
-            font-size: $text-base;
+            gap: 20px 0;
+
+            &_name {
+              font-size: $text-base;
+            }
+
+            &_content {
+              font-size: $text-base;
+            }
           }
         }
-      }
 
-      .right {
-        width: 300px;
-        height: 378px;
-        min-width: auto;
+        .right {
+          width: 300px;
+          height: 378px;
+          min-width: auto;
+        }
       }
     }
   }

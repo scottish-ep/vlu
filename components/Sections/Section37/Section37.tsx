@@ -7,6 +7,7 @@ import SeeMoreBtn from "components/SeeMoreBtn/SeeMoreBtn";
 import defaultAvatar from "public/images/default-avatar.png";
 
 import styles from "./Section37.module.scss";
+import classNames from "classnames";
 
 interface ItemList {
   category: string;
@@ -21,10 +22,11 @@ interface Section37Props {
   directLabel: string;
   directUrl: string;
   list: ItemList[];
+  background?: boolean;
 }
 
 const Section37 = (props: Section37Props) => {
-  const { title, directLabel, directUrl, list } = props;
+  const { title, directLabel, directUrl, list, background } = props;
 
   const List = ({
     items,
@@ -59,7 +61,9 @@ const Section37 = (props: Section37Props) => {
 
   return (
     <SectionLayout
-      className={styles.section_37}
+      className={classNames(styles.section_37, {
+        [styles.background]: background,
+      })}
       childrenClassName={styles.section_37_container}
     >
       <div className={styles.top}>

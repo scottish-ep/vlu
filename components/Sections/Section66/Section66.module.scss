@@ -3,7 +3,8 @@
 .section66 {
   padding: 80px initial;
   position: relative;
-  height: 50vh;
+  height: fit-content;
+  min-height: 50vh;
 
   &_container {
     position: unset !important;
@@ -47,6 +48,18 @@
     background-size: cover;
     border-radius: $border-radius;
     overflow: hidden;
+    &::after {
+      content: "";
+      background-image: url("../../../public/images/bg-grid.png");
+      width: 100%;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      background-size: 100% 100%;
+      right: 0;
+    }
   }
 
   &.none_bg {
@@ -157,6 +170,7 @@
 
     .desktop_image {
       display: block;
+      position: unset;
       width: 65%;
       height: 300px;
       margin-bottom: 25px;

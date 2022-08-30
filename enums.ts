@@ -9,3 +9,8 @@ export enum PostTypes {
   PROJECTS = "projects",
   PUBLICATIONS = "publications",
 }
+
+export enum ContactTypes {
+  PHONE = "phone",
+  EMAIL = "email",
+}

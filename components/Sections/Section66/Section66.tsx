@@ -7,14 +7,19 @@ interface Section66Props {
   title?: string;
   list?: { title?: string; content?: string }[];
   image?: any;
+  className?: string;
 }
 
 const Section66 = (props: Section66Props) => {
-  const { title, list, image } = props;
+  const { title, list, image, className } = props;
 
   return (
     <SectionLayout
-      className={classNames(styles.section66, !image && styles.none_bg)}
+      className={classNames(
+        styles.section66,
+        !image && styles.none_bg,
+        className
+      )}
       childrenClassName={styles.section66_container}
     >
       <div
