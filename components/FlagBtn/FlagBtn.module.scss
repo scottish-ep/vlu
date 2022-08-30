@@ -1,0 +1,90 @@
+@import "styles/variables.scss";
+
+button.flag_btn {
+  position: relative;
+  cursor: pointer;
+  width: 95%;
+  padding: 12px 24px;
+  line-height: $line-height;
+  font-size: $text-md;
+  color: $greyscale-0;
+  font-weight: $font-bold;
+  background: $primary-500;
+  color: $greyscale-0;
+
+  .icon {
+    path {
+      fill: $primary-500;
+    }
+  }
+
+  &:hover {
+    background: $primary-650;
+
+    .icon {
+      path {
+        fill: $primary-650;
+      }
+    }
+  }
+  .icon {
+    position: absolute;
+    height: 100%;
+    left: 100%;
+    width: auto;
+    top: 0;
+  }
+
+  &.small {
+    padding: 0 12px;
+    font-size: $text-sm;
+    font-weight: $font-normal;
+    width: auto;
+
+    .icon {
+      width: 14px;
+      margin-left: -1px;
+    }
+  }
+
+  &.secondary {
+    background: $secondary-500;
+
+    .icon {
+      path {
+        fill: $secondary-500;
+      }
+    }
+
+    &:hover {
+      background: $secondary-350;
+
+      .icon {
+        path {
+          fill: $secondary-350;
+        }
+      }
+    }
+  }
+
+  &.tertiary {
+    color: $primary-500;
+    background: $yellow-100;
+
+    .icon {
+      path {
+        fill: $yellow-100;
+      }
+    }
+
+    &:hover {
+      background: $yellow-400;
+
+      .icon {
+        path {
+          fill: $yellow-400;
+        }
+      }
+    }
+  }
+}

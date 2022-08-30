@@ -1,0 +1,171 @@
+@import "styles/variables.scss";
+
+.section_28 {
+  position: relative;
+  background: $secondary-500;
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 270px;
+    height: 417px;
+    background-image: url("../../../public/images/section_28_bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &_container {
+    position: unset !important;
+    display: flex;
+    justify-content: space-between;
+    gap: 29px 40px;
+    padding: 50px 0;
+
+    .left {
+      width: 21%;
+
+      .title {
+        font-size: $text-5xl;
+        color: $greyscale-0;
+        font-weight: $font-bold;
+        margin-bottom: 32px;
+      }
+
+      .content {
+        color: $greyscale-0;
+        font-size: $text-lg;
+        line-height: $line-height;
+        opacity: 0.8;
+        font-family: $ibm-font, sans-serif;
+      }
+    }
+
+    .right {
+      width: calc(100% - 21% - 40px);
+      margin: 0 -20px;
+
+      .item {
+        padding: 0 10px;
+        margin: 0 0 40px 10px;
+        position: relative;
+
+        .image {
+          overflow: hidden;
+          border-radius: 12px;
+
+          & > span {
+            transition: all 0.25s linear;
+          }
+
+          &:hover {
+            & > span {
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        .title {
+          position: absolute;
+          width: 75%;
+          left: 26px;
+          bottom: 24px;
+          padding: 0 10px;
+          color: $greyscale-0;
+          line-height: $line-height;
+          font-size: $text-xl;
+          font-weight: $font-bold;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    &::before {
+      display: none;
+    }
+
+    &_container {
+      flex-direction: column;
+
+      .left {
+        width: 100%;
+
+        .title {
+          font-size: $text-3xl;
+          margin-bottom: 24px;
+        }
+
+        .content {
+          font-size: $text-md;
+        }
+      }
+
+      .right {
+        width: 100%;
+
+        .item {
+          .title {
+            left: 12px;
+            bottom: 12px;
+            font-size: $text-lg;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $big-mobile) {
+    &_container {
+      .right {
+        .item {
+          margin-bottom: 20px;
+
+          .title {
+            font-size: $text-sm;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_container {
+      padding: 40px 0;
+
+      .left {
+        .title {
+          font-size: $text-xl;
+          margin-bottom: 16px;
+        }
+
+        .content {
+          font-size: $text-base;
+        }
+      }
+
+      .right {
+        .item {
+          margin-bottom: 20px;
+
+          .title {
+            font-size: $text-xs;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $small-mobile) {
+    &_container {
+      .right {
+        .title {
+          font-size: 10px !important;
+        }
+      }
+    }
+  }
+}

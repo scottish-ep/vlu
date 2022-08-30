@@ -1,0 +1,116 @@
+@import "styles/variables.scss";
+
+.hero2 {
+  overflow: hidden;
+  ul {
+    position: relative;
+    left: 11%;
+    top: -65px;
+    margin-top: 0;
+  }
+
+  .list {
+    .item {
+      display: flex !important;
+      height: 708px;
+
+      .left {
+        position: relative;
+        flex: 1;
+      }
+
+      .right {
+        width: 44%;
+        padding: 32px 60px;
+        background: $secondary-500;
+
+        .category {
+          color: $primary-500;
+          font-size: $text-base;
+          font-weight: $font-bold;
+        }
+
+        .title {
+          margin-top: 24px;
+          margin-bottom: 30px;
+          font-size: $text-5xl;
+          font-weight: $font-semi-bold;
+          color: $greyscale-0;
+
+          display: -webkit-box;
+          -webkit-line-clamp: 5;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .content {
+          font-family: $ibm-font;
+          font-size: $text-md;
+          color: $greyscale-0;
+          line-height: $line-height;
+          opacity: 0.7;
+
+          display: -webkit-box;
+          -webkit-line-clamp: 5;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          margin-bottom: 63px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $desktop) {
+    .list {
+      .item {
+        .right {
+          padding: 24px 30px;
+
+          .title {
+            font-size: $text-3xl;
+          }
+
+          .content {
+            font-size: $text-base;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    ul {
+      left: 12%;
+    }
+  }
+
+  @media screen and (max-width: $big-mobile) {
+    ul {
+      position: relative;
+      left: 25px;
+      top: -40px;
+      justify-content: flex-start;
+    }
+
+    .list {
+      .item {
+        flex-direction: column;
+        height: 737px;
+
+        .right {
+          width: 100%;
+          padding: 16px 24px;
+
+          .category {
+            font-size: $text-base;
+            font-weight: $font-bold;
+          }
+
+          .title {
+            font-size: $text-lg;
+          }
+        }
+      }
+    }
+  }
+}

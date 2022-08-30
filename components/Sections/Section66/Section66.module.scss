@@ -1,0 +1,183 @@
+@import "styles/variables.scss";
+
+.section66 {
+  padding: 80px initial;
+  position: relative;
+  height: 50vh;
+
+  &_container {
+    position: unset !important;
+    .desktop_image {
+      display: none;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .text {
+      width: 60%;
+      .title {
+        font-size: $text-2xl;
+        font-weight: $font-bold;
+        margin-bottom: 40px;
+      }
+
+      .content {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 3%;
+        .item {
+          font-size: $text-md;
+          font-weight: $font-light;
+          line-height: 1.5;
+          width: 45%;
+        }
+      }
+    }
+  }
+
+  .image {
+    top: 70px;
+    width: 40%;
+    min-height: 469px;
+    position: absolute;
+    right: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+
+  &.none_bg {
+    .image {
+      top: unset;
+      width: 300px;
+      height: 320px;
+      background-image: url("../../../public/images/bg-section-66-innovation.png");
+      bottom: 0px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .section66 {
+    padding: 50px;
+
+    &_container {
+      .text {
+        width: 57%;
+        .title {
+          font-size: $text-xl;
+          margin-bottom: 35px;
+        }
+
+        .content {
+          display: flex;
+          flex-wrap: wrap;
+          .item {
+            width: 100%;
+            &:not(:last-child) {
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+    }
+
+    .image {
+      width: 370px;
+      height: 410px;
+    }
+
+    &.none_bg {
+      .image {
+        width: 280px;
+        height: 300px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .section66 {
+    padding: 40px;
+
+    &_container {
+      .text {
+        .title {
+          font-size: $text-md;
+          margin-bottom: 25px;
+        }
+
+        .content {
+          display: flex;
+          flex-wrap: wrap;
+          .item {
+            font-size: $text-base;
+            &:not(:last-child) {
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+    }
+
+    .image {
+      width: 330px;
+      height: 370px;
+    }
+
+    &.none_bg {
+      .image {
+        width: 250px;
+        height: 270px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $big-mobile) {
+  .section66 {
+    padding: 40px 0;
+    &_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .text {
+        width: 100%;
+      }
+    }
+
+    .image {
+      margin-top: 50px;
+      width: 50%;
+    }
+
+    .desktop_image {
+      display: block;
+      width: 65%;
+      height: 300px;
+      margin-bottom: 25px;
+    }
+
+    .mobile_image {
+      display: none;
+    }
+
+    &.none_bg {
+      .image {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .section66 {
+    .desktop_image {
+      width: 100%;
+    }
+  }
+}

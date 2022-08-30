@@ -1,0 +1,124 @@
+@import "styles/variables.scss";
+
+.section_21 {
+  width: 100%;
+  position: relative;
+  padding: 70px initial;
+  background-color: $secondary-500;
+
+  .background {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 60%;
+    width: 20%;
+    max-width: 300px;
+  }
+
+  &_container {
+    position: unset !important;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      .title {
+        font-size: $text-5xl;
+        font-weight: $font-bold;
+        color: white;
+        width: 70%;
+        max-width: 800px;
+      }
+    }
+
+    .body {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1%;
+      row-gap: 20px;
+
+      .card {
+        z-index: 1;
+        width: 32%;
+        display: flex;
+        border-radius: $border-radius;
+        overflow: hidden;
+        height: auto;
+        &_image {
+          width: 40%;
+          height: auto;
+          position: relative;
+          .card_date {
+            position: absolute;
+            width: 100%;
+            padding: 10px;
+            justify-content: center;
+            display: flex;
+            bottom: 0;
+            left: 0;
+            background-color: $primary-500;
+            color: white;
+          }
+        }
+
+        &_body {
+          background-color: white;
+          padding: 16px;
+          width: 60%;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .card_title {
+            font-size: $text-lg;
+          }
+
+          .card_content {
+            color: $secondary-300;
+            font-size: $text-md;
+            font-weight: $font-light;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    &_container {
+      .header {
+        width: 100%;
+        flex-direction: column;
+        .title {
+          width: 100%;
+          margin-bottom: 30px;
+        }
+      }
+      .body {
+        gap: 4%;
+        row-gap: 30px;
+        .card {
+          height: auto;
+          width: 46%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_container {
+      .header {
+        .title {
+          font-size: $text-2xl;
+        }
+      }
+
+      .body {
+        row-gap: 30px;
+        .card {
+          height: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

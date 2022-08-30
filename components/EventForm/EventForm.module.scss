@@ -1,0 +1,77 @@
+@import "styles/variables.scss";
+
+.event_form {
+  display: flex;
+  justify-content: center;
+}
+
+.section_container {
+  padding: 29px 102px 50px 102px;
+  background-image: url("../../public/images/bg-form-events.svg");
+  max-width: 1004px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+
+  .title {
+    text-align: center;
+    font-size: $text-3xl;
+    font-weight: $font-bold;
+    line-height: 46px;
+    margin-bottom: 32px;
+    color: $greyscale-0;
+  }
+
+  .form {
+    padding: 32px 40px;
+    border-radius: $border-radius;
+    background-color: $greyscale-0;
+    .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 29px;
+    } 
+  }
+}
+
+@media screen and (max-width: $big-tablet) { 
+  .section_container {
+    padding: 29px 82px 50px 82px;
+  }
+}
+
+@media screen and (max-width: $tablet) { 
+  .section_container {
+    padding: 29px 50px 30px 50px;
+  
+    .form {
+      padding: 27px 30px;
+    }
+  }
+}
+
+@media screen and (max-width: $big-mobile) { 
+  .section_container {
+    padding: 20px 30px 20px 30px;
+    .title {
+      font-size: $text-2xl;
+      line-height: 38px;
+      margin-bottom: 25px;
+    }
+
+    .form {
+      padding: 25px;
+    }
+  }
+}
+
+@media screen and (max-width: $medium-mobile) {
+  .section_container {
+    padding: 20px;
+    .form {
+      padding: 15px;
+    }
+  }
+}

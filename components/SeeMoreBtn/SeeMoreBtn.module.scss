@@ -1,0 +1,23 @@
+@import "styles/variables.scss";
+
+.see_more_btn {
+  font-size: $text-md;
+  font-weight: $font-bold;
+  direction: ltr;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: fit-content;
+  cursor: pointer;
+
+  &_icon {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    width: 34px;
+    border-radius: 0 18px 18px 0;
+    background-color: $primary-500;
+  }
+}

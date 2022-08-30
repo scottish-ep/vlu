@@ -1,0 +1,96 @@
+@import "styles/variables.scss";
+
+.hero {
+  width: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: calc(101vh - 90px);
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.4;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+
+  .hero_container {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    color: $greyscale-0;
+
+    .title {
+      width: 70%;
+      max-width: 1000px;
+      line-height: 117%;
+      font-size: $text-12xl;
+      font-weight: $font-bold;
+      margin-bottom: 32px;
+    }
+
+    .content {
+      line-height: $line-height;
+      font-weight: $font-light;
+      font-size: $text-lg;
+      font-family: $ibm-font;
+      max-width: 713px;
+      margin-bottom: 15%;
+    }
+  }
+
+  @media screen and (max-width: $desktop) {
+    height: 80vh;
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    .hero_container {
+      .title {
+        font-size: $text-5xl;
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    height: calc(80vh - 90px);
+
+    .hero_container {
+      .title {
+        font-size: $text-3xl;
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    display: block;
+    background-size: cover;
+    height: calc(100vh - 50px);
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: unset;
+
+    .hero_container {
+      .title {
+        font-size: $text-2xl;
+        font-weight: $font-semi-bold;
+        gap: 35px;
+      }
+
+      .content {
+        font-size: $text-md;
+      }
+    }
+  }
+}

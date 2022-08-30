@@ -1,0 +1,214 @@
+@import "styles/variables.scss";
+
+.section_43 {
+  padding: 80px initial;
+
+  &.background {
+    background-color: $background;
+  }
+
+  &.green {
+    .banner {
+      &:after {
+        background-image: url("../../../public/images/section-43_green-bg.svg");
+      }
+    }
+  }
+
+  &.blue {
+    .banner {
+      &:after {
+        background-image: url("../../../public/images/section-43_blue-bg.svg");
+      }
+    }
+  }
+
+  .header {
+    margin-bottom: 30px !important;
+    .title {
+      font-size: $text-5xl;
+      font-weight: $font-bold;
+    }
+  }
+
+  .banner {
+    margin: 30px 0 0 0;
+    display: flex;
+    gap: 50px;
+    position: relative;
+    height: 100%;
+    padding: 40px 0;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 80%;
+      width: 75%;
+      z-index: 0;
+      max-width: 2000px;
+      border-radius: 100px 0 0 0;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &_container {
+      position: relative;
+      display: flex;
+      gap: 80px;
+      width: 100%;
+      .image {
+        width: 30%;
+        position: relative;
+        border-radius: $border-radius;
+        overflow: hidden;
+        z-index: 1;
+        padding-top: 35%;
+      }
+
+      .first_item {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 20px;
+        z-index: 1;
+        padding: 30px 0;
+
+        &_title {
+          font-size: $text-3xl;
+          font-weight: $font-bold;
+          color: white;
+        }
+
+        &_category {
+          color: $yellow-100;
+        }
+
+        &_content {
+          color: white;
+          line-height: $line-height;
+          font-weight: $font-light;
+          font-size: $text-md;
+        }
+      }
+    }
+  }
+
+  .list {
+    padding-top: 40px;
+    border-top: 1px solid $secondary-100;
+    .card_container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 40px;
+      .item {
+        width: 23%;
+        .image {
+          border-radius: 12px;
+          overflow: hidden;
+          width: 100%;
+          padding-top: 130%;
+          position: relative;
+          & > span {
+            transition: all 0.25s linear;
+          }
+
+          &:hover {
+            & > span {
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        .title {
+          margin-top: 20px;
+          color: $dark-50;
+          font-size: $text-lg;
+          font-weight: $font-bold;
+          line-height: $line-height;
+          letter-spacing: -0.006em;
+        }
+
+        .category {
+          margin: 5px 0;
+          color: $primary-500;
+          font-size: $text-base;
+          line-height: $line-height;
+          font-weight: $font-normal;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    .banner {
+      flex-direction: column;
+      gap: 0;
+
+      &:after {
+        width: 85%;
+        height: 95%;
+      }
+
+      &_container {
+        gap: 50px;
+        .image {
+          height: 300px;
+          width: 35%;
+          img {
+            border-radius: $border-radius;
+          }
+        }
+        .first_item {
+          width: 65%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    .banner {
+      flex-direction: column;
+      gap: 0;
+
+      &:after {
+        width: 90%;
+      }
+
+      &_container {
+        display: block;
+        gap: 50px;
+        .image {
+          height: 300px;
+          width: 100%;
+          img {
+            border-radius: $border-radius;
+          }
+        }
+        .first_item {
+          position: relative;
+          padding-left: 15%;
+          width: 100%;
+          z-index: 1;
+        }
+      }
+    }
+
+    .list {
+      overflow: hidden;
+      .card_container {
+        padding-bottom: 20px;
+        flex-wrap: nowrap;
+        overflow: auto;
+        gap: 10px;
+        .item {
+          width: 40vw !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,165 @@
+@import "styles/variables.scss";
+
+.section_19 {
+  &_container {
+    padding: 50px 0;
+
+    .title {
+      margin-bottom: 48px;
+      color: $dark-50;
+      font-weight: $font-bold;
+      font-size: $text-5xl;
+    }
+
+    .content {
+      display: flex;
+      gap: 24px;
+      justify-content: space-between;
+
+      &_background {
+        width: 52.5%;
+        // max-width: 754px;
+        border-radius: 12px;
+        overflow: hidden;
+
+        & > span {
+          transition: all 0.25s linear;
+        }
+
+        &:hover {
+          & > span {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      &_slider {
+        width: 40%;
+      }
+
+      &_text {
+        margin-left: 20px;
+        position: relative;
+        // max-width: 500px;
+        height: max-content;
+        padding-left: 44px;
+        padding-right: 20px;
+        border-left: 1px solid $greyscale-100;
+
+        &::before {
+          position: absolute;
+          content: "";
+          left: 0;
+          top: 0;
+          width: 16px;
+          height: 16px;
+          transform: translateX(-8px);
+          border-radius: 100%;
+          background-color: $primary-500;
+        }
+      }
+
+      .time {
+        color: $primary-500;
+        font-weight: $font-bold;
+        font-size: $text-5xl;
+      }
+
+      .title {
+        margin: 31px 0;
+        color: $dark-50;
+        font-weight: $font-bold;
+        font-size: $text-xl;
+        line-height: $line-height;
+        letter-spacing: -0.005em;
+      }
+
+      .content {
+        color: $greyscale-600;
+        font-size: $text-lg;
+        word-break: break-all;
+        line-height: $line-height;
+        font-family: $ibm-font, sans-serif;
+      }
+    }
+  }
+
+  @media screen and (max-width: $desktop) {
+    &_container {
+      .title {
+        margin-bottom: 22px;
+      }
+
+      .content {
+        flex-direction: column;
+
+        &_background {
+          width: 100%;
+        }
+
+        &_slider {
+          width: 100%;
+        }
+
+        &_text {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    &_container {
+      .title {
+        font-size: $text-3xl;
+        letter-spacing: -0.005em;
+      }
+
+      .content {
+        &_text {
+          padding-left: 24px;
+
+          .time {
+            font-size: $text-3xl;
+            letter-spacing: -0.005em;
+          }
+
+          .title {
+            margin: 16px 0;
+            font-size: $text-lg;
+          }
+
+          .content {
+            font-size: $text-md;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_container {
+      padding: 40px 0;
+
+      .title {
+        font-size: $text-xl;
+      }
+
+      .content {
+        &_text {
+          .time {
+            font-size: $text-xl;
+          }
+
+          .title {
+            font-size: $text-md;
+          }
+
+          .content {
+            font-size: $text-base;
+          }
+        }
+      }
+    }
+  }
+}

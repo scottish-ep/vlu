@@ -1,0 +1,87 @@
+@import "styles/variables.scss";
+
+.wrapper_component {
+  color: $dark-50;
+
+  .title {
+    font-weight: $font-bold;
+    line-height: 130%;
+    font-size: $text-2xl;
+    margin-bottom: 40px;
+  }
+
+  .content {
+    font-size: $text-md;
+    color: $dark-50;
+    line-height: $line-height;
+    font-family: $ibm-font;
+    margin-bottom: 20px;
+  }
+  
+  .list {
+    .item {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+  
+      .label {
+        line-height: 140%;
+        font-size: $text-md;
+        font-family: $ibm-font;
+        margin-left: 18px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $big-tablet) {
+  .wrapper_component {
+    .title {
+      font-size: $text-xl;
+      margin-bottom: 30px;
+    }
+
+    .content {
+      font-size: $text-md;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $big-tablet) {
+  .wrapper_component {
+    .list {
+      .item {
+        .label {
+          font-size: $text-base;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .wrapper_component {
+    .title {
+      margin-bottom: 20px;
+    }
+
+    .content {
+      font-size: $text-base;
+      margin-top: 8px;
+    }
+
+    .list {
+      .label {
+        font-size: $text-base;
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}

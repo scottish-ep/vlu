@@ -1,0 +1,116 @@
+@import "styles/variables.scss";
+
+.section {
+  position: relative;
+  background: $secondary-500;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    background-image: url("../../public/images/information_form_avatar.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 506px;
+    height: 425px;
+  }
+
+  &:after {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background-image: url("../../public/images/information_form_bg_mobile.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 150px;
+    height: 488px;
+  }
+
+  &_container {
+    position: unset !important;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 64px 0;
+
+    .left {
+      width: 40%;
+
+      &_title {
+        display: flex;
+        gap: 0 70px;
+        color: $greyscale-0;
+        font-weight: $font-bold;
+        font-size: $text-5xl;
+
+        .box {
+          width: 47px;
+          height: 74px;
+          background: $yellow-500;
+          clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            44% 100%,
+            44% 84%,
+            22% 84%,
+            22% 69%,
+            0 69%
+          );
+        }
+      }
+
+      &_content {
+        margin-top: 16px;
+        margin-bottom: 24px;
+        color: $blue-300;
+      }
+    }
+
+    .right {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      border-radius: 12px;
+      gap: 29px 0;
+      width: 60%;
+      height: max-content;
+      padding: 32px 40px;
+      background: $greyscale-0;
+    }
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    &:before {
+      display: none;
+    }
+
+    &:after {
+      display: block;
+    }
+
+    &_container {
+      padding: 52px 0;
+
+      .left {
+        display: none;
+      }
+
+      .right {
+        width: 100%;
+        gap: 24px 0;
+        padding: 32px 16px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_container {
+      padding: 40px 0;
+    }
+  }
+}

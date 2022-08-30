@@ -1,0 +1,129 @@
+@import "styles/variables.scss";
+
+.section_9 {
+  width: 100%;
+  padding: 60px initial;
+
+  &_top {
+    &_container {
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .title {
+          font-weight: $font-bold;
+          font-size: $text-5xl;
+          width: 40%;
+        }
+
+        .content {
+          font-weight: $font-light;
+          font-size: $text-md;
+          line-height: 1.5;
+          width: 50%;
+        }
+      }
+
+      .list {
+        margin-top: 40px;
+        &_item {
+          padding: 10px;
+          position: relative;
+          &_image {
+            position: relative;
+            height: 100px;
+            img {
+              border-radius: $border-radius;
+            }
+          }
+
+          &_title {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 80%;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  &_bottom {
+    .mobile_button {
+      display: none;
+    }
+
+    &_container {
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 60px 0 40px 0;
+        .subtitle {
+          font-weight: $font-bold;
+          font-size: $text-xl;
+          width: 40%;
+        }
+
+        .content {
+          font-weight: $font-light;
+          font-size: $text-md;
+          width: fit-content;
+        }
+      }
+
+      .card_container {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        .card {
+          width: 33%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_top_container {
+      .header {
+        flex-direction: column;
+        .title {
+          width: 100%;
+          font-size: $text-2xl;
+        }
+
+        .content {
+          margin: 20px 0;
+          width: 100%;
+          font-size: $text-base;
+        }
+      }
+    }
+
+    &_bottom_container {
+      .desktop_button {
+        display: none;
+      }
+
+      .mobile_button {
+        display: flex;
+      }
+
+      .header {
+        .subtitle {
+          width: 100%;
+          font-size: $text-xl;
+        }
+      }
+
+      .card_container {
+        flex-direction: column;
+        .card {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

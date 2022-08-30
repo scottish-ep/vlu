@@ -1,0 +1,263 @@
+@import "styles/variables.scss";
+
+.card {
+  position: relative;
+  height: max-content;
+  cursor: pointer;
+
+  .image_slider {
+    position: relative;
+
+    .arrow_prev,
+    .arrow_next {
+      bottom: 10px;
+      z-index: 1;
+      background-color: $secondary-500;
+      height: 40px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border: 1px solid white;
+      bottom: -15px;
+      width: 40px;
+    }
+
+    .arrow_prev {
+      position: absolute;
+      right: 70px;
+      border-radius: 50% 0 0 50%;
+    }
+
+    .arrow_next {
+      position: absolute;
+      right: 20px;
+      border-radius: 0 50% 50% 0;
+    }
+  }
+
+  &_image {
+    position: relative;
+    width: 100%;
+    padding-top: 55%;
+    border-radius: $border-radius;
+    overflow: hidden;
+    img {
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 16px;
+    .card_category {
+      color: $primary-500;
+      font-weight: $font-bold;
+      font-size: $text-sm;
+      width: max-content;
+    }
+
+    .card_date {
+      width: fit-content;
+    }
+  }
+
+  &_title {
+    z-index: 1;
+    font-size: $text-xl;
+    font-weight: $font-semi-bold;
+    margin: 12px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &_from {
+    z-index: 1;
+    font-size: $text-2xm;
+    line-height: 140%;
+    color: $dark-50;
+    opacity: 0.6;
+    margin: 12px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &_content {
+    font-size: $text-md;
+    font-weight: $font-light;
+    line-height: 140%;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 29px;
+    margin-top: 12px;
+    overflow: hidden;
+  }
+
+  &_direct_label {
+    color: $primary-500;
+    font-weight: $font-semi-bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  &.small {
+    .body {
+      .card_title {
+        font-size: $text-md;
+        margin-bottom: 10px;
+        font-weight: $font-semi-bold;
+      }
+
+      .card_category {
+        font-weight: $font-bold;
+      }
+    }
+  }
+
+  &.horizontal {
+    display: flex;
+    gap: 20px;
+    .card_category {
+      margin-top: 0;
+    }
+    .card_image {
+      width: 40%;
+      max-width: 160px;
+      height: auto;
+      overflow: hidden;
+      padding-top: unset;
+    }
+    .body {
+      width: 60%;
+    }
+  }
+
+  &.outlined {
+    border: 1px solid $greyscale-100;
+    border-radius: $border-radius;
+    .body {
+      padding: 0 20px 10px 20px;
+    }
+    .card_image {
+      border-radius: $border-radius $border-radius 0 0;
+    }
+  }
+
+  &.dark {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: $border-radius;
+
+    .card_image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        opacity: 0.6;
+        background-color: black;
+      }
+    }
+
+    .body {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+
+      .card_content {
+        opacity: 0.9;
+        margin-bottom: 40px;
+      }
+
+      .card_direct_label {
+        width: fit-content;
+        width: 85%;
+        height: 80px;
+        z-index: 1;
+        margin-top: auto;
+        text-align: left;
+        padding: 14px;
+      }
+    }
+  }
+
+  &.center {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: $border-radius;
+
+    .card_image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        opacity: 0.6;
+        background-color: black;
+      }
+    }
+    .body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .card_direct_label {
+        padding: 14px 28px;
+        height: auto;
+        width: fit-content;
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &.end {
+    .body {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_title {
+      font-size: $text-md;
+    }
+  }
+}

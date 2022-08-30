@@ -1,0 +1,9 @@
+@import "styles/variables.scss";
+
+.section5 {
+  background-color: $secondary-500 !important;
+	background-image: url("../public/images/bg-campuses-section5.svg");
+	background-repeat: no-repeat;
+	background-position: top left;
+	color: $greyscale-0 !important;
+}

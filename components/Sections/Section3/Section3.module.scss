@@ -1,0 +1,116 @@
+@import "styles/variables.scss";
+
+.section_3 {
+  width: 100%;
+  padding: 60px initial;
+
+  .mobile_btn {
+    display: none;
+  }
+
+  &_container {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 40px;
+      .title {
+        font-weight: $font-bold;
+        font-size: $text-5xl;
+      }
+    }
+
+    .body {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+
+      .list {
+        display: flex;
+        gap: 30px;
+        .thumbnail {
+          width: 50%;
+        }
+        &_right {
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+          gap: 3%;
+          &_item {
+            height: 22%;
+            padding-bottom: 3%;
+            border-bottom: 1px solid $greyscale-100;
+            &:last-child {
+              border: none;
+            }
+          }
+        }
+      }
+
+      .sub_list {
+        &_container {
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+        }
+      }
+    }
+  }
+
+  &.revert & {
+    &_container {
+      .body {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    &_container {
+      .header {
+        flex-direction: column;
+      }
+      .body {
+        .list {
+          flex-direction: column;
+          .thumbnail {
+            width: 100%;
+          }
+          &_right {
+            gap: 20px;
+            width: 100%;
+            &_item {
+              border: none;
+              height: 100px;
+            }
+          }
+        }
+        .sub_list {
+          overflow: auto;
+          width: 100%;
+          &_container {
+            display: flex;
+            flex-wrap: nowrap;
+            width: max-content;
+            overflow-x: auto;
+            .sub_list_item {
+              width: 70vw;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_container {
+      .header {
+        flex-direction: column;
+
+        .title {
+          font-size: $text-2xl;
+        }
+      }
+    }
+  }
+}

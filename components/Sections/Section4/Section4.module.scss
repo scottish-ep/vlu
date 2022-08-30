@@ -1,0 +1,112 @@
+@import "styles/variables.scss";
+
+.section_4 {
+  background-color: $background;
+  padding: 70px initial;
+  position: relative;
+  .background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(5px) scaleX(-1);
+    height: 380px;
+    width: 400px;
+  }
+
+  &_container {
+    position: unset !important;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    .header {
+      width: 30%;
+      .title {
+        font-size: $text-5xl;
+        font-weight: $font-bold;
+      }
+
+      .content {
+        margin: 30px 0;
+        font-size: $text-md;
+      }
+    }
+
+    .body {
+      width: 65%;
+      display: flex;
+      flex-wrap: wrap;
+
+      .group {
+        width: 33%;
+        border-bottom: 1px solid $secondary-100;
+        padding: 30px 0;
+        &:last-child {
+          border: none;
+        }
+
+        &_title {
+          display: flex;
+          align-items: center;
+          font-weight: $font-bold;
+          font-size: $text-xl;
+          gap: 10px;
+          padding: 0 10px;
+          cursor: pointer;
+        }
+
+        &_container {
+          margin-top: 12px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+
+          .group_item {
+            padding: 0 10px 0 60px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    &_container {
+      flex-direction: column;
+      .header {
+        width: 100%;
+      }
+      .body {
+        width: 100%;
+        .group {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_container {
+      flex-direction: column;
+      .header {
+        .title {
+          font-size: $text-2xl;
+        }
+
+        .content {
+          font-size: $text-base;
+        }
+      }
+      .body {
+        .group {
+          padding: 0;
+          width: 100%;
+          border: none;
+          margin-top: 40px;
+          &_title {
+            font-size: $text-lg;
+          }
+        }
+      }
+    }
+  }
+}

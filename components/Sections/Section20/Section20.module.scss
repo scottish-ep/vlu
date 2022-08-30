@@ -1,0 +1,100 @@
+@import "styles/variables.scss";
+
+.section_20 {
+  width: 100%;
+  position: relative;
+  min-height: 60vh;
+  height: fit-content;
+
+  &_container {
+    position: unset !important;
+    .image {
+      border-radius: $border-radius 0 0 $border-radius;
+      position: absolute;
+      height: calc(100% - 140px);
+      width: 50%;
+      top: 70px;
+      right: 0;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      &.mobile_image {
+        display: none;
+      }
+    }
+
+    .left {
+      width: 45%;
+      padding: 70px initial;
+      .title {
+        font-size: $text-5xl;
+        font-weight: $font-semi-bold;
+      }
+
+      .content {
+        margin: 20px 0;
+        font-size: $text-lg;
+        font-weight: $font-light;
+        line-height: 1.5;
+      }
+
+      .direct_label {
+        width: max-content;
+        background-color: $primary-500;
+        padding: 12px 24px;
+        color: white;
+        display: flex;
+        height: 42px;
+        position: relative;
+        border: nones;
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: -32px;
+          top: 0;
+          display: block;
+          background-image: url("../../../public/images/section6-btn-suffix.svg");
+          width: 32px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    .image {
+      position: relative;
+      height: 300px;
+      width: 100%;
+      top: 0;
+      right: 0;
+      border-radius: $border-radius;
+      &.mobile_image {
+        margin-right: -50px;
+        display: block;
+      }
+      &.desktop_image {
+        display: none;
+      }
+    }
+
+    &_container {
+      .left {
+        width: 100%;
+        .title {
+          font-size: $text-2xl;
+          margin-bottom: 20px;
+        }
+
+        .content {
+          font-size: $text-md;
+        }
+      }
+    }
+  }
+}

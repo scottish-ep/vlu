@@ -1,0 +1,154 @@
+@import "styles/variables.scss";
+
+.section_38 {
+  background-color: $secondary-500;
+  color: white;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    background-image: url("../../../public/images/section-38_pattern.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 506px;
+    height: 425px;
+    z-index: 1;
+  }
+
+  &_container {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0;
+    gap: 5%;
+    z-index: 1;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      // max-width: 706px;
+      width: 30%;
+
+      &_title {
+        font-weight: $font-bold;
+        font-size: $text-5xl;
+      }
+
+      &_content {
+        font-size: $text-lg;
+        margin-top: 20px;
+        line-height: $line-height;
+        font-family: $ibm-font, sans-serif;
+      }
+
+      &_more {
+        margin-top: 20px;
+      }
+    }
+
+    .right {
+      width: 65%;
+      // max-width: 535px;
+      padding-right: 10px;
+
+      &_item {
+        padding-bottom: 80px;
+        padding-right: 20px;
+        display: flex !important;
+        gap: 40px;
+
+        &_date {
+          width: 10%;
+          color: $yellow-200;
+          min-width: 150px;
+          font-size: $text-xl;
+        }
+
+        &_title {
+          font-size: $text-xl;
+          font-weight: $font-bold;
+          margin-bottom: 10px;
+          line-height: $line-height;
+          letter-spacing: -0.005em;
+        }
+
+        &_content {
+          font-size: $text-lg;
+          line-height: $line-height;
+          font-weight: $font-light;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    &_container {
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 0;
+
+      .left {
+        width: 100%;
+
+        &_title {
+          font-size: $text-3xl;
+          letter-spacing: -0.005em;
+        }
+
+        &_content {
+          font-size: $text-md;
+          margin: 16px 0;
+          width: 100%;
+        }
+
+        &_background {
+          margin-top: 24px;
+        }
+      }
+
+      .right {
+        width: 100%;
+        &_item {
+          padding-top: 30px;
+          padding-bottom: 30px;
+
+          &_title {
+            font-size: $text-lg;
+          }
+
+          &_content {
+            font-size: $text-base;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_container {
+      padding: 40px 0;
+      flex-direction: column;
+      .left {
+        width: 100%;
+        &_title {
+          font-size: $text-2xl;
+        }
+      }
+
+      .right {
+        width: 100%;
+        &_item {
+          flex-direction: column;
+          gap: 20px;
+          &_title {
+            font-size: $text-md;
+          }
+        }
+      }
+    }
+  }
+}

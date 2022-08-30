@@ -1,0 +1,134 @@
+@import "styles/variables.scss";
+
+.hero {
+  width: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: calc(101vh - 90px);
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.25;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+
+  .hero_container {
+    z-index: 2;
+    .title {
+      font-size: $text-8xl;
+      color: white;
+      font-weight: $font-bold;
+      position: absolute;
+      top: 130px;
+      width: 50%;
+      display: flex;
+      gap: 30px;
+
+      &::before {
+        content: "";
+        display: block;
+        background-color: $primary-500;
+        height: auto;
+        width: 10px;
+      }
+    }
+
+    .content {
+      position: absolute;
+      color: white;
+      bottom: 100px;
+      right: 0;
+      width: 35%;
+      line-height: 1.5;
+      font-size: $text-lg;
+      font-weight: $font-light;
+    }
+  }
+
+  @media screen and (max-width: $desktop) {
+    height: 80vh;
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    display: flex;
+    justify-content: space-between;
+
+    .hero_container {
+      gap: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .title,
+      .content {
+        top: 100px;
+      }
+
+      .title {
+        font-size: $text-5xl;
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    padding: 80px 0;
+    height: calc(80vh - 90px);
+    background-attachment: initial;
+
+    .hero_container {
+      gap: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      .title,
+      .content {
+        position: relative;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+
+      .title {
+        font-size: $text-3xl;
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    display: block;
+    background-size: cover;
+    height: calc(100vh - 50px);
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: unset;
+
+    padding: 40px 0;
+
+    .hero_container {
+      .title {
+        font-size: $text-3xl;
+        font-weight: $font-semi-bold;
+        gap: 20px;
+      }
+
+      .content {
+        font-size: $text-base;
+      }
+    }
+  }
+}

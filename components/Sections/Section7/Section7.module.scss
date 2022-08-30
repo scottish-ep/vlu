@@ -1,0 +1,57 @@
+@import "styles/variables.scss";
+
+.section_7 {
+  width: 100%;
+  padding: 90px initial;
+
+  &_container {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      gap: 100px;
+      .title {
+        font-weight: $font-bold;
+        font-size: $text-5xl;
+        width: 55%;
+      }
+
+      .content {
+        font-weight: $font-light;
+        font-size: $text-md;
+        width: 45%;
+        line-height: 1.5;
+      }
+    }
+
+    .list {
+      margin-top: 40px;
+
+      &_item {
+        position: relative;
+        height: 80px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_container {
+      .header {
+        flex-direction: column;
+        gap: 40px;
+        .title {
+          width: 100%;
+          font-size: $text-2xl;
+        }
+
+        .content {
+          margin: 20px 0;
+          width: 100%;
+          font-size: $text-base;
+        }
+      }
+    }
+  }
+}

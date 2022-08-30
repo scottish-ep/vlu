@@ -1,0 +1,21 @@
+@import "styles/variables.scss";
+
+.section {
+  width: 100%;
+  overflow: hidden;
+  .children_container {
+    position: relative;
+    width: $content-width !important;
+    max-width: $content-max-width !important;
+    margin: auto !important;
+    height: 100%;
+  }
+
+  @media screen and (max-width: $tablet) {
+    .children_container {
+      margin: unset;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

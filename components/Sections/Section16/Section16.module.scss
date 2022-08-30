@@ -1,0 +1,85 @@
+@import "styles/variables.scss";
+
+.section_16 {
+  &_container {
+    padding: 50px 0;
+
+    .title {
+      font-size: $text-5xl;
+      font-weight: $font-bold;
+      color: $dark-50;
+    }
+
+    .list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-top: 56px;
+      margin-bottom: 64px;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: 18px 0;
+
+        &_title {
+          font-size: $text-xl;
+          font-weight: $font-bold;
+          color: $dark-50;
+          line-height: $line-height;
+        }
+
+        &_content {
+          font-size: $text-md;
+          color: $greyscale-600;
+          line-height: $line-height;
+          font-family: $ibm-font, sans-serif;
+        }
+      }
+    }
+
+    .read_more {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    &_container {
+      padding: 30px 0;
+
+      .title {
+        font-size: $text-3xl;
+      }
+
+      .list {
+        margin: 24px 0;
+        grid-template-columns: repeat(2, 1fr);
+
+        .item {
+          &_title {
+            font-size: $text-lg;
+          }
+
+          &_content {
+            font-size: $text-base;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_container {
+      padding: 20px 0;
+
+      .title {
+        font-size: $text-xl;
+      }
+
+      .list {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}

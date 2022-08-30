@@ -1,0 +1,92 @@
+@import "styles/variables.scss";
+
+.section_34 {
+  padding: 70px initial;
+
+  &.background {
+    background-color: $background;
+  }
+
+  &_container {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      gap: 100px;
+      .title {
+        font-weight: $font-bold;
+        font-size: $text-5xl;
+      }
+    }
+
+    .body {
+      margin-top: 40px;
+      display: flex;
+      gap: 2%;
+      .item {
+        width: 32%;
+        height: 450px;
+      }
+    }
+  }
+
+  &.horizontal & {
+    &_container {
+      display: flex;
+      gap: 40px;
+      .header {
+        flex-direction: column;
+        justify-content: unset;
+        gap: 50px;
+        width: 30%;
+      }
+
+      .body {
+        width: 70%;
+        margin-top: 0;
+        .item {
+          position: relative;
+          width: 50%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .section_34 {
+    &_container {
+      flex-direction: column;
+
+      .header {
+        .title {
+          font-size: $text-2xl;
+          width: 100%;
+        }
+      }
+
+      .body {
+        flex-direction: column;
+        gap: 16px;
+        .item {
+          width: 100% !important;
+          height: 380px;
+        }
+      }
+    }
+
+    &.horizontal & {
+      &_container {
+        .header {
+          width: 100%;
+        }
+        .body {
+          width: 100%;
+          .item {
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

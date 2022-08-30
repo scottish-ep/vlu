@@ -1,0 +1,128 @@
+@import "styles/variables.scss";
+
+.section_72 {
+  .item {
+    padding: 40px 0;
+
+    &:nth-child(odd) {
+      .item_container {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &_container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 18px;
+
+      & > .title {
+        width: 50%;
+        margin-right: 50%;
+        margin-bottom: 30px;
+        font-size: $text-5xl;
+        font-weight: $font-bold;
+      }
+
+      .item_left {
+        width: 47%;
+        position: relative;
+        height: 385px;
+        overflow: hidden;
+        border-radius: 12px;
+  
+        & > span {
+          transition: all 0.25s linear;
+        }
+
+        &:hover {
+          & > span {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .item_right {
+        width: 47%;
+
+        .title {
+          font-weight: $font-bold;
+          font-size: $text-5xl;
+          color: $dark-50;
+          line-height: $line-height;
+        }
+
+        .content {
+          font-size: $text-lg;
+          color: $dark-50;
+          line-height: $line-height;
+          margin-top: 32px;
+          font-family: $ibm-font;
+        }
+      }
+    }
+  }
+
+  &.secondary {
+    .item {
+      //add background color to odd items
+      &:nth-child(even) {
+        background-color: $background;
+        .item_container {
+          flex-direction: row;
+          .item_right {
+            .title {
+              font-size: $text-3xl;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    .item {
+      &_container {
+        flex-direction: column !important;
+        & > .title {
+          width: 100%;
+          margin-right: 0;
+        }
+
+        .item_left {
+          width: 100%;
+        }
+
+        .item_right {
+          width: 100%;
+
+          .content {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    .item {
+      padding: 20px 0;
+
+      &_container {
+        .item_right {
+          .title {
+            font-size: $text-2xl;
+          }
+          .content {
+            font-size: $text-base;
+            margin-top: 8px;
+          }
+        }
+
+        .item_left {
+          height: 255px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@import "styles/variables.scss";
+
+.text_section {
+  padding: 80px initial;
+  &_container {
+    .title {
+      font-size: $text-2xl;
+      font-weight: $font-bold;
+      margin-bottom: 40px;
+
+      display: -webkit-box;
+      max-width: 100%;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 3%;
+      .item {
+        font-size: $text-md;
+        font-weight: $font-light;
+        line-height: 1.5;
+        width: 30%;
+      }
+    }
+
+    @media screen and (max-width: $tablet) {
+      &_container {
+        .content {
+          .item {
+            width: 48%;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 40px initial;
+    &_container {
+      .title {
+        font-size: $text-lg;
+      }
+      .content {
+        flex-direction: column;
+        gap: 40px;
+        .item {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

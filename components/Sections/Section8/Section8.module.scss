@@ -1,0 +1,203 @@
+@import "styles/variables.scss";
+
+.section_8 {
+  padding: 40px initial;
+  position: relative;
+
+  ul {
+    position: absolute;
+    width: fit-content;
+    right: 57%;
+    top: -5%;
+  }
+
+  &.blue {
+    .layer {
+      background-color: $secondary-500;
+    }
+  }
+
+  &.green {
+    .layer {
+      background-color: $green-400;
+    }
+  }
+
+  &.background {
+    background-image: url("../../../public/images/section8-background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: fit-content;
+    color: white;
+
+    .layer {
+      background-color: $secondary-500;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0.9;
+    }
+
+    .section_8_container {
+      .card {
+        gap: 50px;
+        .image {
+          &:before {
+            background-image: none;
+          }
+        }
+      }
+    }
+  }
+
+  .section_8_container {
+    position: unset;
+    .title {
+      font-size: $text-5xl;
+      font-weight: $font-bold;
+      margin-bottom: 60px;
+      width: 80%;
+      max-width: 1000px;
+    }
+
+    .card {
+      display: flex !important;
+      gap: 100px;
+      position: relative;
+      width: 100%;
+      padding: 0 0 60px 60px;
+      box-sizing: border-box;
+
+      .image {
+        width: 30%;
+        padding-top: 35%;
+        position: relative;
+        box-sizing: border-box;
+
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 10%;
+          left: -20%;
+          background-image: url("../../../public/images/section8-pattern.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+        img {
+          border-radius: 0 0 50% 50%;
+        }
+      }
+
+      .body {
+        width: 70%;
+        margin-top: 20px;
+        .card_content {
+          font-size: $text-xl;
+          font-weight: $font-light;
+          line-height: 1.5;
+        }
+
+        .card_title {
+          margin-top: 30px;
+          margin-bottom: 10px;
+          font-size: $text-2xl;
+          font-weight: $font-bold;
+        }
+
+        .card_subtitle {
+          font-size: $text-md;
+          font-weight: $font-light;
+          color: $secondary-300;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $big-desktop) {
+    ul {
+      right: 56% !important;
+    }
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    ul {
+      right: 50% !important;
+    }
+    .section_8_container {
+      .title {
+        width: 100%;
+      }
+      .card {
+        gap: 50px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    ul {
+      top: 0%;
+      right: 30% !important;
+    }
+
+    &.background {
+      background-attachment: initial;
+    }
+
+    .section_8_container {
+      .title {
+        width: 100%;
+      }
+      .card {
+        flex-direction: column;
+        gap: 50px;
+        .image {
+          width: 280px;
+          height: 340px;
+        }
+
+        .body {
+          width: 100%;
+          .card_content {
+            font-size: $text-md;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    ul {
+      position: unset;
+      justify-content: flex-start;
+      left: 0;
+      top: 0;
+    }
+
+    .section_8_container {
+      .title {
+        font-size: $text-2xl;
+      }
+
+      .content {
+        font-size: $text-base;
+      }
+
+      .card {
+        padding-left: 0;
+        padding-bottom: 12px;
+        .image {
+          margin: auto;
+          width: 90%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,159 @@
+@import "styles/variables.scss";
+
+.section_30 {
+  position: relative;
+  overflow: hidden;
+  background: $secondary-500;
+
+  &_container {
+    position: static !important;
+    display: flex;
+    justify-content: space-between;
+    color: $greyscale-0;
+    padding: 67px 0;
+
+    .background {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      transform: translateY(20px);
+    }
+
+    .left {
+      width: 31%;
+
+      .title {
+        font-size: $text-5xl;
+        font-weight: $font-bold;
+      }
+
+      .content {
+        margin-top: 16px;
+        margin-bottom: 48px;
+        font-size: $text-lg;
+        line-height: $line-height;
+        opacity: 0.8;
+        font-family: $ibm-font, sans-serif;
+      }
+    }
+
+    .right {
+      width: 46%;
+
+      .item {
+        padding: 27px 0;
+        border-bottom: 1px solid $secondary-350;
+
+        &:first-child {
+          padding-top: 0;
+        }
+
+        &:last-child {
+          border-bottom: none;
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+
+        &_title {
+          font-size: $text-xl;
+          font-weight: $font-bold;
+        }
+
+        &_content {
+          margin-top: 21px;
+          margin-bottom: 12px;
+          font-size: $text-md;
+          line-height: $line-height;
+          opacity: 0.8;
+          font-family: $ibm-font, sans-serif;
+        }
+
+        &_showmore {
+          color: $yellow-100;
+          font-weight: $font-bold;
+          font-size: $text-base;
+          line-height: $line-height;
+        }
+      }
+    }
+
+    .mobile {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    &_container {
+      padding: 50px 0;
+      flex-direction: column;
+      gap: 32px 0;
+
+      .background {
+        display: none;
+      }
+
+      .left {
+        width: 100%;
+
+        .title {
+          font-size: $text-3xl;
+        }
+
+        .content {
+          margin-bottom: 0;
+          font-size: $text-md;
+        }
+
+        .button {
+          display: none;
+        }
+      }
+
+      .right {
+        width: 100%;
+
+        .item {
+          &:first-child {
+            border-top: 1px solid $secondary-350;
+            padding-top: 27px;
+          }
+
+          &:last-child {
+            border-bottom: 1px solid $secondary-350;
+            padding-bottom: 27px;
+          }
+
+          &_title {
+            font-size: $text-lg;
+          }
+
+          &_content {
+            margin-top: 10px;
+            margin-bottom: 16px;
+            font-size: $text-base;
+          }
+        }
+      }
+
+      .mobile {
+        display: block;
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_container {
+      padding: 40px 0;
+
+      .left {
+        .title {
+          font-size: $text-2xl;
+        }
+
+        .content {
+          font-size: $text-base;
+        }
+      }
+    }
+  }
+}

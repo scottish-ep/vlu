@@ -1,0 +1,236 @@
+@import "styles/variables.scss";
+
+.section_18 {
+  background: $secondary-600;
+  padding: 40px 0;
+  position: relative;
+
+  &.horizontal {
+    &::before {
+      display: block;
+    }
+  }
+
+  &::before {
+    display: none;
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: -10px;
+    background-image: url("../../../public/images/section_18_bg.png");
+    height: 400px;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &_container {
+    position: unset !important;
+
+    .background {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: translateY(5px);
+    }
+
+    .top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+
+      &_title {
+        font-size: $text-5xl;
+        font-weight: $font-bold;
+        color: $greyscale-0;
+      }
+
+      &_content {
+        color: #dbdbdb;
+        font-size: $text-md;
+        font-weight: $font-light;
+        line-height: $line-height;
+      }
+    }
+
+    .center {
+      // display: flex;
+      // flex-wrap: wrap;
+      // justify-content: space-between;
+      // gap: 40px;
+      margin: 0 -20px;
+
+      &_item {
+        padding: 0 20px;
+        &_avatar {
+          position: relative;
+          overflow: hidden;
+          // min-width: 300px;
+          // width: 420px;
+          // height: 394px;
+          border-radius: 10px;
+          margin-bottom: 24px;
+
+          &:hover {
+            .center_item_avatar_content {
+              opacity: 1;
+            }
+          }
+
+          &_content {
+            opacity: 0;
+            position: absolute;
+            font-size: $text-md;
+            font-weight: $font-semi-bold;
+            line-height: $line-height;
+            // max-width: 372px;
+            width: 90%;
+            bottom: 24px;
+            left: 24px;
+            z-index: 99;
+            padding: 16px;
+            color: $greyscale-0;
+            background: rgba(215, 33, 52, 0.8);
+            border-radius: 0px 32px 0px 0px;
+          }
+        }
+
+        &_title {
+          color: $greyscale-0;
+          font-weight: $font-bold;
+          font-size: $text-lg;
+          margin-bottom: 3px;
+          line-height: $line-height;
+          letter-spacing: -0.006em;
+        }
+
+        &_role {
+          opacity: 0.6;
+          line-height: $line-height;
+          color: $greyscale-0;
+          font-size: $text-base;
+          font-family: $ibm-font, sans-serif;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    &.horizontal &_container {
+      display: flex;
+      gap: 40px;
+
+      .top {
+        width: 30%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 30px;
+        &_title {
+          margin-bottom: 20px;
+        }
+      }
+
+      .center {
+        width: 70%;
+      }
+    }
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    &.horizontal &_container {
+      flex-direction: column;
+    }
+
+    &.horizontal {
+      &::before {
+        display: none;
+      }
+    }
+
+    .top {
+      &_title {
+        margin-bottom: 20px;
+        font-size: $text-3xl;
+      }
+    }
+
+    .center {
+      &_item {
+        // width: max-content;
+
+        &_avatar {
+          margin-bottom: 20px;
+
+          &_content {
+            font-size: $text-base;
+            left: 0;
+            width: 100%;
+            bottom: 0;
+          }
+        }
+
+        &_title {
+          font-size: $text-md;
+        }
+
+        &_role {
+          font-size: $text-sm;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .section_18 {
+    &_container {
+      .top {
+        &_title {
+          font-size: $text-2xl;
+        }
+
+        &_content {
+          font-size: $text-base;
+        }
+      }
+
+      .center {
+        &_item {
+          &_avatar {
+            // height: 322px;
+
+            &_content {
+              opacity: 1;
+            }
+          }
+
+          &_title {
+            font-size: $text-base;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $small-mobile) {
+  .center {
+    &_item {
+      &_avatar {
+        margin-bottom: 100px;
+        overflow: unset;
+
+        &_content {
+          top: 75%;
+          height: max-content;
+        }
+      }
+    }
+  }
+}

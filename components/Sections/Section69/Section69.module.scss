@@ -1,0 +1,108 @@
+@import "styles/variables.scss";
+
+.section_69 {
+  margin-top: 61px;
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 70px;
+
+    .title {
+      font-size: $text-5xl;
+      color: $dark-50;
+      font-weight: $font-bold;
+      max-width: 415px;
+    }
+
+    .content {
+      width: 58%;
+      font-weight: $font-medium;
+      font-size: $text-lg;
+      line-height: $line-height;
+      color: $dark-100;
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .icon {
+      min-width: 21px;
+    }
+
+    .item {
+      width: 48%;
+      margin-bottom: 60px;
+    }
+  }
+}
+
+@media screen and (max-width: $big-tablet) {
+  .section_69 {
+    margin-top: 45px;
+    .header {
+      margin-bottom: 50px;
+    
+      .content {
+        font-size: $text-md;
+      }
+    }
+
+    .list {
+      .item {
+        margin-bottom: 40px;
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: $big-tablet) {
+  .section_69 {
+    .header {
+      flex-direction: column;
+
+      .content {
+        margin-top: 15px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// @media screen and (max-width: $big-mobile) {
+//   .section_69 {
+//     .list {
+//       .item {
+//         width: 100%;
+//       }
+//     }
+//   }
+// }
+
+@media screen and (max-width: $mobile){
+  .section_69 {
+    margin-top: 30px;
+    .header {
+      margin-bottom: 20px;
+
+      .title {
+        font-size: $text-2xl;
+      }
+
+      .content {
+        font-size: $text-base;
+      }
+    }
+
+    .list {
+      .item {
+        width: 100%;
+      }
+    }
+  }
+}

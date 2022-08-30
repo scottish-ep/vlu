@@ -1,0 +1,130 @@
+@import "styles/variables.scss";
+
+.section_27 {
+  &_container {
+    padding: 60px 0;
+
+    .title {
+      color: $dark-50;
+      font-size: $text-5xl;
+      font-weight: $font-bold;
+    }
+
+    .content {
+      width: 50%;
+      margin-top: 23px;
+      margin-bottom: 56px;
+      color: $greyscale-600;
+      line-height: $line-height;
+      font-size: $text-lg;
+      font-family: $ibm-font, sans-serif;
+    }
+
+    .list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-between;
+      gap: 24px 40px;
+
+      .item {
+        padding: 32px 30px;
+        border-radius: 10px;
+        background: $secondary-250;
+
+        &:hover {
+          cursor: pointer;
+          background: $secondary-500;
+
+          .item {
+            &_title,
+            &_content {
+              color: $greyscale-0;
+            }
+          }
+        }
+
+        &_title {
+          font-weight: $font-bold;
+          font-size: $text-xl;
+          color: $dark-50;
+          line-height: $line-height;
+        }
+
+        &_line {
+          margin-top: 34px;
+          margin-bottom: 52px;
+          height: 2px;
+          width: 55px;
+          background: $primary-550;
+        }
+
+        &_content {
+          color: $greyscale-600;
+          font-size: $text-base;
+          line-height: $line-height;
+          font-family: $ibm-font;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    &_container {
+      padding: 40px 0;
+
+      .title {
+        font-size: $text-3xl;
+      }
+
+      .content {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 48px;
+        font-size: $text-md;
+      }
+
+      .list {
+        grid-template-columns: repeat(1, 1fr);
+
+        .item {
+          &_title {
+            font-size: $text-lg;
+          }
+
+          &_line {
+            margin: 35px 0;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_container {
+      padding: 20px 0;
+
+      .title {
+        font-size: $text-2xl;
+        color: $greyscale-600;
+      }
+
+      .content {
+        margin-top: 16px;
+        margin-bottom: 40px;
+        font-size: $text-base;
+      }
+
+      .list {
+        .item {
+          border-radius: 8.36585px;
+
+          .item {
+            &_title {
+              font-size: $text-md;
+            }
+          }
+        }
+      }
+    }
+  }
+}

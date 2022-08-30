@@ -1,0 +1,11 @@
+@import "styles/variables.scss";
+
+.body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  margin: auto;
+
+  width: 100vw;
+}

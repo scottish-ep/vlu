@@ -1,0 +1,20 @@
+@import "styles/variables.scss";
+
+.textarea {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  resize: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: $border-radius;
+  font-size: $text-md;
+  background-color: $secondary-250;
+  font-family: $ibm-font;
+  line-height: $input-line-height;
+  height: $textarea-height;
+  font-weight: $font-light;
+  text-overflow: ellipsis;
+  color: $secondary-700;
+  box-sizing: border-box;
+}

@@ -1,0 +1,138 @@
+@import "styles/variables.scss";
+
+.section_6 {
+  background-color: $yellow-100;
+  width: 100%;
+  position: relative;
+  height: fit-content;
+  min-height: 529px;
+
+  .flag_btn {
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    padding: 10px 50px;
+  }
+
+  .image {
+    position: absolute;
+    height: 90%;
+    width: 50%;
+    top: 0;
+    right: 0;
+    &.mobile_image {
+      display: none;
+    }
+
+    .deco_1_block,
+    .deco_2_block {
+      display: block;
+      position: absolute;
+      bottom: -5px;
+      left: -5px;
+      background-color: $yellow-100;
+    }
+
+    .deco_1_block {
+      height: 30%;
+      width: 70px;
+    }
+
+    .deco_2_block {
+      height: 15%;
+      width: 130px;
+    }
+  }
+
+  &_container {
+    position: unset !important;
+    .left {
+      width: 45%;
+      padding: 70px initial;
+      display: flex;
+      flex-direction: column;
+      .title {
+        font-size: $text-5xl;
+        font-weight: $font-semi-bold;
+      }
+
+      .content {
+        margin: 32px 0;
+        font-size: $text-lg;
+        font-weight: $font-light;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  &.green {
+    background-color: $green-100;
+
+    .left {
+      .title,
+      .content {
+        color: $greyscale-0;
+      }
+    }
+
+    .image {
+      .deco_1_block,
+      .deco_2_block {
+        background-color: $green-100;
+      }
+    }
+  }
+
+  &.red {
+    background-color: $primary-500;
+
+    .left {
+      .title,
+      .content {
+        color: $greyscale-0;
+      }
+    }
+
+    .image {
+      .deco_1_block,
+      .deco_2_block {
+        background-color: $primary-500;
+      }
+    }
+  }
+
+  @media screen and (max-width: $desktop) {
+    .background {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    .image {
+      position: relative;
+      height: 300px;
+      width: 100%;
+      margin-right: -50px;
+      &.mobile_image {
+        display: block;
+      }
+      &.desktop_image {
+        display: none;
+      }
+    }
+
+    &_container {
+      .left {
+        width: 100%;
+        .title {
+          font-size: $text-2xl;
+          margin-bottom: 20px;
+        }
+
+        .content {
+          font-size: $text-md;
+        }
+      }
+    }
+  }
+}

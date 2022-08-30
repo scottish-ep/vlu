@@ -1,0 +1,95 @@
+@use "styles/variables.scss" as *;
+
+@import "styles/variables.scss";
+.hidden_tab {
+  position: relative;
+  .title_see_more {
+    margin-right: 15px;
+  }
+
+  .active {
+    transform: rotate(90deg);
+  }
+
+  .tab {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: $text-lg;
+    color: $secondary-300;
+    line-height: $line-height;
+    font-family: $ibm-font, sans-serif;
+    fill: $primary-500;
+  }
+
+  .drop_down {
+    position: absolute;
+    bottom: -5px;
+    transform: translateY(100%);
+    left: 0;
+    text-align: center;
+    right: 0;
+    background: $secondary-250;
+    z-index: 99;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    max-height: 0; 
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    .tab {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+    &.expand {
+      padding: 10px;
+      max-height: 500px;
+      pointer-events: all;
+    }
+  }   
+  
+  @media screen and (max-width: $desktop) {
+    .tab {
+      font-size: $text-md;
+    }
+
+    .text {
+      font-size: $text-md;
+    }
+  }
+
+  @media screen and (max-width: $big-mobile) {
+    .drop_down {
+      bottom: 10px;
+      border-radius: 0px;
+      box-shadow: unset;
+      text-align: left;
+      &.expand {
+        padding: 10px 37px;
+      }
+    }
+
+    &_bg {
+      height: 48px;
+    }
+
+    .text {
+      display: flex;
+      justify-content: space-between;
+
+      &_arrow {
+        display: block;
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    .drop_down {
+      text-align: left;
+      &.expand {
+        padding: 10px 17px;
+      }
+    }
+  }
+}

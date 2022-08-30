@@ -1,0 +1,218 @@
+@import "styles/variables.scss";
+
+.section_2 {
+  width: 100%;
+
+  .see_more {
+    &_mobile {
+      display: none;
+    }
+  }
+
+  &_top {
+    background-color: $primary-500;
+    padding: 0 initial;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      height: 50%;
+      width: calc(50% - 620px);
+      min-width: 170px;
+      line-height: 1.5;
+      background-color: $primary-600;
+    }
+
+    &_container {
+      height: fit-content;
+      .header {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 60px;
+
+        .title {
+          font-size: $text-5xl;
+          font-weight: $font-bold;
+          color: white;
+        }
+
+        .content {
+          color: white;
+          font-size: $text-lg;
+          font-weight: $font-light;
+          max-width: 800px;
+          width: 70%;
+          line-height: 1.5;
+        }
+      }
+
+      .body {
+        padding: 50px initial;
+        .images_container {
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+
+          .image_item {
+            width: 418px;
+            height: 225px;
+            position: relative;
+
+            &:before {
+              content: "";
+              background-image: linear-gradient(
+                to bottom,
+                rgba(255, 253, 253, 0),
+                rgba(91, 91, 91, 0.317),
+                rgb(0, 0, 0)
+              );
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 100%;
+              width: 100%;
+              opacity: 0.8;
+              z-index: 1;
+            }
+
+            .title {
+              display: relative;
+              position: absolute;
+              bottom: 20px;
+              color: white;
+              width: 90%;
+              font-size: $text-md;
+              left: 20px;
+              z-index: 1;
+            }
+
+            img {
+              border-radius: $border-radius;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &_bottom {
+    margin-top: -2px;
+    justify-content: space-between;
+    background-color: $primary-600;
+    width: 100%;
+    position: relative;
+    height: max-content;
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: block;
+      height: 100%;
+      width: 50%;
+      background-color: $secondary-500;
+    }
+
+    &_container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      .list_container {
+        display: flex;
+        justify-content: space-between;
+        background-color: $secondary-500;
+        padding: 60px;
+        gap: 60px;
+        z-index: 1;
+        .item {
+          max-width: 200px;
+          .title {
+            font-size: $text-5xl;
+            font-weight: $font-bold;
+            color: $yellow-100;
+          }
+
+          .content {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: $text-base;
+
+    .see_more {
+      &_desktop {
+        display: none;
+      }
+
+      &_mobile {
+        display: flex;
+        margin-top: 20px;
+      }
+    }
+
+    &_top {
+      &:before {
+        display: none;
+      }
+      &_container {
+        .header {
+          flex-direction: column;
+
+          .title {
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: $text-2xl;
+          }
+
+          .content {
+            width: 100%;
+            font-size: $text-base;
+          }
+        }
+
+        .body {
+          padding: 50px initial;
+          overflow: auto;
+          flex-wrap: nowrap;
+
+          .images_container {
+            width: max-content;
+
+            .image_item {
+              width: 300px;
+            }
+          }
+        }
+      }
+    }
+
+    &_bottom {
+      background-color: $secondary-500;
+
+      &::after {
+        display: none;
+      }
+
+      &_container {
+        .list_container {
+          padding: 40px 0;
+          flex-direction: column;
+          overflow: hidden;
+          gap: 20px;
+          .item {
+            max-width: unset;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

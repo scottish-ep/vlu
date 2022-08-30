@@ -1,0 +1,159 @@
+@import "styles/variables.scss";
+
+$images: (
+  "img1": img1,
+  "img2": img2,
+  "img3": img3,
+  "img4": img4,
+  "img5": img5,
+  "img6": img6,
+);
+
+@each $name, $area in $images {
+  .#{$name} {
+    grid-area: $area;
+    border-radius: $border-radius;
+    overflow: hidden;
+    cursor: pointer;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background-color: black;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: bottom 0.1s ease-in-out;
+    }
+
+    .see_more_btn {
+      position: absolute;
+      bottom: 20px;
+      left: -100px;
+      z-index: 2;
+      width: fit-content;
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      color: white;
+      background-color: $primary-500;
+      padding: 6px 16px;
+      font-weight: $font-bold;
+
+      &:hover {
+        background-color: $primary-650;
+      }
+    }
+
+    &:hover {
+      &:before {
+        opacity: 0.6;
+      }
+
+      .see_more_btn {
+        left: 20px;
+      }
+    }
+  }
+}
+
+.section_12 {
+  width: 100%;
+  padding: 60px initial;
+
+  .content {
+    font-family: $ibm-font;
+    font-weight: $font-light;
+    padding-right: 10px;
+    align-items: center;
+    font-size: $text-lg;
+    grid-area: content;
+    overflow: hidden;
+  }
+
+  .mobile_content {
+    display: none;
+  }
+
+  &_container {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      .title {
+        font-weight: $font-bold;
+        font-size: $text-5xl;
+      }
+    }
+
+    .list_container {
+      height: 75vh;
+      margin-top: 40px;
+      display: grid;
+      gap: 4px;
+      grid-template-areas:
+        "content img1 img2"
+        "img3 img1 img2"
+        "img3 img4 img2"
+        "img3 img4 img6"
+        "img3 img5 img6"
+        "img3 img5 img6";
+    }
+  }
+
+  &.blue {
+    background: $secondary-500;
+    color: $greyscale-0;
+  }
+
+  &.no_content & {
+    &_container {
+      .list_container {
+        grid-template-areas:
+          "img3 img1 img2"
+          "img3 img1 img2"
+          "img3 img4 img2"
+          "img3 img4 img6"
+          "img3 img5 img6"
+          "img3 img5 img6";
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    .mobile_content {
+      display: block;
+    }
+
+    &_container {
+      font-size: $text-base;
+
+      .header {
+        flex-direction: column;
+        gap: 20px;
+        .title {
+          width: 100%;
+          font-size: $text-2xl;
+        }
+      }
+
+      .list_container {
+        grid-template-areas:
+          "img3 img1 img2"
+          "img3 img1 img2"
+          "img3 img4 img2"
+          "img3 img4 img6"
+          "img3 img5 img6"
+          "img3 img5 img6";
+        .content {
+          margin: 20px 0;
+          width: 100%;
+          font-size: $text-base;
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+@import "styles/variables.scss";
+
+.section_5 {
+  width: 100%;
+  padding: 60px initial;
+  &.background {
+    background-color: $background;
+  }
+
+  &_container {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      .title {
+        font-weight: $font-bold;
+        font-size: $text-5xl;
+        margin-bottom: 40px;
+        max-width: 50%;
+      }
+
+      .content {
+        font-weight: $font-light;
+        font-size: $text-lg;
+        margin-bottom: 40px;
+        max-width: 60%;
+        line-height: 1.5;
+      }
+    }
+
+    .card_container {
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      row-gap: 40px;
+      .card {
+        width: 32%;
+        &.length_2 {
+          width: 48%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    .section_5_container {
+      .header {
+        flex-direction: column;
+        gap: 0;
+        .title {
+          max-width: 100%;
+          margin-bottom: 0;
+        }
+
+        .content {
+          max-width: 100%;
+          margin: 30px 0;
+        }
+
+        .see_more_btn {
+          margin: 20px 0 30px 0;
+        }
+      }
+      .card_container {
+        flex-direction: column;
+        gap: 30px;
+        .card {
+          width: 100%;
+          &.length_2 {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    .section_5_container {
+      .header {
+        .title {
+          font-size: $text-2xl;
+        }
+
+        .content {
+          font-size: $text-base;
+        }
+      }
+    }
+  }
+}

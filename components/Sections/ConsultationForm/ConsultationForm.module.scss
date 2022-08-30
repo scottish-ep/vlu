@@ -1,0 +1,126 @@
+@import "styles/variables.scss";
+
+.consultation_form {
+  background-color: $secondary-500;
+  padding: 55px initial;
+  position: relative;
+
+  .submit_btn {
+    text-align-last: center;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: url("../../../public/images/consultation-form-girl.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    width: 500px;
+    z-index: 0;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url("../../../public/images/consultation-form-pattern.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 330px;
+    width: 150px;
+    z-index: 0;
+  }
+
+  &_container {
+    display: flex;
+    gap: 50px;
+    position: unset !important;
+    .header {
+      width: 30%;
+      color: white;
+
+      .title {
+        max-width: 80%;
+        font-size: $text-4xl;
+        font-weight: $font-bold;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(207, 203, 203, 0.5);
+      }
+
+      .contact {
+        margin-top: 30px;
+        font-size: $text-md;
+        font-weight: $font-light;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        & > div {
+          display: flex;
+          gap: 10px;
+        }
+      }
+    }
+
+    .form {
+      padding: 40px 30px;
+      width: 70%;
+      background-color: white;
+      border-radius: $border-radius;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      z-index: 1;
+      box-sizing: border-box;
+      overflow: hidden;
+      .label {
+        font-weight: $font-bold;
+      }
+    }
+  }
+
+  @media screen and (max-width: $big-desktop) {
+    &::before {
+      left: -50px;
+      height: 300px;
+      width: 400px;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    &::before {
+      display: none;
+    }
+
+    &:after {
+      top: unset;
+      bottom: 0;
+      left: 0;
+      transform: rotate(180deg);
+    }
+
+    &_container {
+      flex-direction: column;
+      .header {
+        width: 100%;
+        .title {
+          max-width: 100%;
+          font-size: $text-2xl;
+        }
+      }
+
+      .form {
+        padding: 30px 20px;
+        width: 100%;
+        gap: 30px;
+      }
+    }
+  }
+}
